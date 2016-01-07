@@ -5,15 +5,7 @@ python:
 #  - "3.3"
 #  - "3.4"
 #  - "3.5"
-
-#install:
-#  - git clone --branch=develop https://github.com/confirm/ansibleci.git ../ansibleci
-#  - pip install PyYAML
-#  - cp testing/settings.py ../ansibleci/settings.py
-#script:
-#  - python ../ansibleci/test.py
-
 install:
   - pip install ansibleci PyYAML
 script:
-  - python testing/test.py
+  - python test/test.py
