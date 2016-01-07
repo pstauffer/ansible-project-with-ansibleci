@@ -1,0 +1,5 @@
+---
+- name:     run some roles
+  hosts:    localhost
+  roles:
+    - sample

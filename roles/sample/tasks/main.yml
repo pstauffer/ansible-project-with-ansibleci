@@ -1,0 +1,11 @@
+---
+- name: configure sample
+  template:
+    src: sample.conf.j2
+    dest: /tmp/sample.conf
+    owner: root
+    group: root
+    mode: 0640
+  notify:
+    - restart sample
+  tags: sample
