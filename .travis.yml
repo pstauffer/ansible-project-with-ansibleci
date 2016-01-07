@@ -5,7 +5,12 @@ python:
 #  - "3.3"
 #  - "3.4"
 #  - "3.5"
+before_install:
+ - sudo apt-get update -qq
+ - sudo apt-get install -qq python-apt python-pycurl
 install:
-  - pip install ansibleci PyYAML
+  - pip install ansibleci PyYAML ansible
 script:
   - python test/test.py
+  - ansible-playbook --syntax-check plays/sample.yml
+#  - ansible-playbook --sudo -v --diff plays/sample.yml
