@@ -1,3 +1,3 @@
 from ansibleci.defaults import *
 
-BASEDIR = '../'
+BASEDIR = 'ansible-project-with-ansibleci'
