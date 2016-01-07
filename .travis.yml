@@ -5,10 +5,10 @@ python:
 install:
   - git clone --branch=develop https://github.com/confirm/ansibleci.git pstauffer/ansibleci
   - pip install PyYAML
-  - ls -l
+  - cd testing
 script:
   - ls -l
-#  - python ../../ansibleci/test.py
+  - python ../../ansibleci/test.py
 
 #install:
 #  - pip install ansibleci PyYAML
