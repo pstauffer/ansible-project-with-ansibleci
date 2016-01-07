@@ -1,2 +1,2 @@
 # samle inventory
-localhost
+localhost  ansible_connection=local

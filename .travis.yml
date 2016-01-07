@@ -5,12 +5,14 @@ python:
 #  - "3.3"
 #  - "3.4"
 #  - "3.5"
-#before_install:
-# - sudo apt-get update -qq
-# - sudo apt-get install -qq python-apt python-pycurl
 install:
   - pip install ansibleci PyYAML ansible
 script:
   - python test/test.py
   - ansible-playbook --syntax-check test/playbook.yml
-#  - ansible-playbook --sudo -v --diff test/sample.yml
+  - ansible-playbook --sudo -v --diff test/playbook.yml
+  - >
+    ansible-playbook --sudo test/playbook.yml
+    | grep -q 'changed=0.*failed=0'
+    && (echo 'Idempotence test: pass' && exit 0)
+    || (echo 'Idempotence test: fail' && exit 1)
