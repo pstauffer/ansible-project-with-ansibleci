@@ -1,6 +1,5 @@
 ---
 - name: restart sample
-  service:
-    name: sample
-    state: restarted
+  debug:
+    msg: restarted sample
   tags: sample
